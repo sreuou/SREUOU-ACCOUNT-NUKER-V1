@@ -170,23 +170,19 @@ namespace SREUOU_ACCOUNT_NUKER
                         {
                             { "content", messageContent }
                         };
-
                         HttpResponseMessage messageResponse = await httpClient.PostAsync(messageUrl, new FormUrlEncodedContent(messageData));
-
-                        Console.WriteLine($"[ $ ] ID: {channelId}");
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message, "SREUOU ACCOUNT NUKER", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-
-                Console.WriteLine("\n\nSent Message to ALL friends");
             }
             else
             {
-                Console.WriteLine($"Failed to fetch channel IDs. Status code: {channelsResponse.StatusCode}");
+                MessageBox.Show($"Failed to fetch channel IDs. Status code: {channelsResponse.StatusCode}", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
 }
+

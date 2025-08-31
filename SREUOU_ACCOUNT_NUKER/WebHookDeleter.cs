@@ -113,11 +113,12 @@ namespace SREUOU_ACCOUNT_NUKER
                         if (response.IsSuccessStatusCode)
                         {
                             Webhook.Clear();
-                            Console.WriteLine("DELETE request successful.");
+                            essageBox.Show("DELETE request successful.", "SREUOU ACCOUNT NUKER", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                         }
                         else
                         {
-                            Console.WriteLine($"DELETE request failed with status code: {response.StatusCode}");
+                            MessageBox.Show($"DELETE request failed with status code: {response.StatusCode}", "SREUOU ACCOUNT NUKER", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
@@ -176,3 +177,4 @@ namespace SREUOU_ACCOUNT_NUKER
         }
     }
 }
+
